@@ -64,7 +64,7 @@ resource "aws_nat_gateway" "natgw" {
   subnet_id     = aws_subnet.pubsub.id
 
   tags = {
-    Name = "NATGW"
+    Name = "NATGATEWAY"
   }
 
   # To ensure proper ordering, it is recommended to add an explicit dependency
