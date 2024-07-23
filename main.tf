@@ -10,7 +10,7 @@ terraform {
 provider "aws" {
   region = "us-east-1"
 }
-resourc "aws_vpc" "my_vpc" {
+resource "aws_vpc" "my_vpc" {
   cidr_block       = "10.0.0.0/16"
   instance_tenancy = "default"
 
@@ -31,7 +31,7 @@ resource "aws_subnet" "privsub" {
   cidr_block = "10.0.2.0/24"
   availability_zone = "us-east-1b"
   tags = {
-    Name = "PRIVATE_SUB"
+    Name = "PRIVATE_SUBNET"
   }
 }
 resource "aws_internet_gateway" "igw" {
@@ -50,7 +50,7 @@ resource "aws_route_table" "pubrt" {
   }
 
   tags = {
-    Name = "PUBLIC_RT"
+    Name = "PUBLIC_ROUTE_TABLE"
   }
 }
 resource "aws_route_table_association" "pubrtsubassoc" {
